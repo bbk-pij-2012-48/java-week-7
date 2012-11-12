@@ -25,4 +25,11 @@ public class PersonQueuePointer implements PersonQueue {
 		front = front.getNext();
 		return temp;
 	}
+	
+	public boolean empty() {
+		if(front == null) {
+			return true;
+		}
+		return false;
+	}
 }

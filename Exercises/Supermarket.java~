@@ -1,5 +1,5 @@
 public class Supermarket {
-	private PersonQueue checkout;		// How can I use the interface PersonQueue here, and still use the extra method empty()?
+	private PersonQueuePointer checkout;		// How can I use the interface PersonQueue here, and still use the extra method empty()?
 	
 	public Supermarket() {
 		checkout = new PersonQueuePointer();
@@ -43,12 +43,11 @@ public class Supermarket {
 	}
 	
 	public boolean servePerson() {
-		Person front = checkout.retrieve();
-		if(front == null) {
+		if(checkout.empty()) {
 			System.out.println("No-one left to serve");
 			return false;
 		}
-		System.out.println(front.getName() + " has been served");
+		System.out.println(checkout.retrieve().getName() + " has been served");
 		return true;
 	}
 }
