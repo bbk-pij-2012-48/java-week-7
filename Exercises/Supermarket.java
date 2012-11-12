@@ -2,7 +2,7 @@ public class Supermarket {
 	private PersonQueue checkout;		// How can I use the interface PersonQueue here, and still use the extra method empty()?
 	
 	public Supermarket() {
-		checkout = new PersonQueuePointer();
+		checkout = new PersonQueueArray();
 	}
 	
 	public static void main(String[] args) {
